@@ -34,6 +34,9 @@ const auth= (req, res, next) => {
 server.use(cors());
 server.use(morgan('combined'));
 server.use(express.json());
+server.get('/', (req, res) => {
+    res.send("API connected successfully");
+});
 server.use('/auth',AuthRouter.authRouter);
 server.use('/tasks',auth,TodoRouter.todoRoutes);
 server.use('/profile',auth, UserRouter.UserRoutes);
