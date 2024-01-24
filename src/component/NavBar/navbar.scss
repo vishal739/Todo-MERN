@@ -1,0 +1,22 @@
+.navbar{
+    height: 90px;
+    border-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+
+    .btn{
+        padding: 12px 32px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background-color: #3498db; 
+        color: #fff; 
+        border: 1px solid #3498db; 
+        border-radius: 5px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+}

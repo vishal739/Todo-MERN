@@ -1,0 +1,102 @@
+// styles.scss
+
+// Mixin for centering elements
+@mixin centerElement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage-container {
+  height: 100vh;
+  position: relative;
+  font-family: "Arial", sans-serif;
+
+  background: url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black overlay
+  }
+
+  .detail{
+    position: relative;
+    top: 200px;
+  }
+  .logo-container {
+    @include centerElement;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    img {
+      max-width: 320px; // Adjust the max-width of the logo
+      margin-bottom: 20px;
+    //   min-width: 320px;
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #fff; // Adjust text color
+    }
+  }
+
+  .buttons-container {
+    @include centerElement;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+
+    .btn {
+      padding: 12px 32px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      background-color: #3498db;
+      color: #fff;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-light {
+      padding: 12px 32px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      background: transparent;
+      color: #fff;
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .btn-light:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+
+    .btn:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .signup-button {
+      background-color: #27ae60; // Different color for signup button
+    }
+  }
+}

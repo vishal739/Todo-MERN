@@ -1,0 +1,108 @@
+.signup-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    font-family: "Arial", sans-serif;
+  
+    background: url("https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black overlay
+    }
+  }
+  
+  .signup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    max-width: 330px;
+    border-radius: 2px solid black;
+    box-shadow: 2px 5px 10px 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffffff;
+    z-index: 2;
+    h2 {
+      font-size: 2rem;
+      padding: 15px;
+    }
+  
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  
+    .password {
+      position: relative;
+      width: 100%;
+  
+      input {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+  
+      .eye-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 1; /* Ensure the eye icon is above the input */
+      }
+    }
+  
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      .btn {
+        width: 48%;
+        padding: 10px;
+        background-color: rgba(13, 147, 243, 0.917);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: darken(rgba(13, 147, 243, 0.917), 10%);
+        }
+      }
+  
+      p {
+        padding-top: 11px;
+      }
+  
+      span {
+        font-size: 1.2rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
+    }
+  }
+  
