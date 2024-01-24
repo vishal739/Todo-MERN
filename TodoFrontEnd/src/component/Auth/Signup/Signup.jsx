@@ -4,11 +4,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const Signup = () => {
-    // const [formData, setFormData] = useState({
-    //     username : "",
-    //     email: "",
-    //     password: "",
-    // });
+    const [loading, setLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const togglePasswordVisibility = () => {
@@ -16,6 +12,7 @@ const Signup = () => {
     };
     const postSignUp = async (signUpData) => {
         try {
+            setLoading(true);
             let response = await axios.post('https://todo-api-mocha.vercel.app/auth/signup', signUpData);
             const { token, username } = response.data;
 
@@ -25,6 +22,8 @@ const Signup = () => {
             navigate(`/user/${username}`);
         } catch (error) {
             console.error('POST request failed:', error);
+        }finally{
+            setLoading(false);
         }
     };
     const handleSubmit = (e) => {
@@ -63,7 +62,9 @@ const Signup = () => {
                             </div>
                         </div>
                         <div className="btn-container">
-                            <button type="submit" className="btn">SignUp</button>
+                        <button type="submit" className="btn" disabled={loading}>
+                                    {loading ? 'Please wait...' : 'SignUp'}
+                                </button>
                             <p>Already Registered? <Link to="/auth/login">Click here</Link></p>
                         </div>
                     </form>
