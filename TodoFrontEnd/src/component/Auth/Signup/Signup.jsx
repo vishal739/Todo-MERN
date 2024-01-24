@@ -16,7 +16,7 @@ const Signup = () => {
     };
     const postSignUp = async (signUpData) => {
         try {
-            let response = await axios.post('http://localhost:8000/auth/signup', signUpData);
+            let response = await axios.post('https://todo-api-mocha.vercel.app/auth/signup', signUpData);
             const { token, username } = response.data;
 
             localStorage.setItem(`${username}Token`, token);

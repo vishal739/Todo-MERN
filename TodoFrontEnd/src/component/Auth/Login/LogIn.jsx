@@ -14,7 +14,7 @@ const LogIn = () => {
 
     const postLogin = async (loginData) => {
         try {
-            let response = await axios.post('http://localhost:8000/auth/login', loginData);
+            let response = await axios.post('https://todo-api-mocha.vercel.app/auth/login', loginData);
 
             const { token, username } = response.data;
             localStorage.setItem(`${username}Token`, token);

@@ -34,7 +34,7 @@ const Todo = ({ user }) => {
   const getTask = async () => {
     try {
       //console.log(`Bearer ${token}`);
-      let response = await axios.get(`http://localhost:8000/tasks/${userId}` );
+      let response = await axios.get(`https://todo-api-mocha.vercel.app/tasks/${userId}` );
       //console.log("Response: ", response);
       setCapturedData(response.data);
     } catch (error) {
@@ -45,7 +45,7 @@ const Todo = ({ user }) => {
   const postTask = async (postData) => {
     try {
       postData.UserId = userId;
-      let response = await axios.post(`http://localhost:8000/tasks/${userId}`, postData);
+      let response = await axios.post(`https://todo-api-mocha.vercel.app/tasks/${userId}`, postData);
       //console.log('POST request successful:', response);
       getTask(); // Ensure this is called after successful POST
     } catch (error) {
@@ -56,7 +56,7 @@ const Todo = ({ user }) => {
   const updateTask = async (updateData, id) => {
     try {
       //console.log("update data: ", updateData);
-      let response = await axios.patch(`http://localhost:8000/tasks/${userId}/${id}`, updateData);
+      let response = await axios.patch(`https://todo-api-mocha.vercel.app/tasks/${userId}/${id}`, updateData);
       //console.log('PUT request successful:', response);
       getTask(); // Ensure this is called after successful POST
     } catch (error) {
@@ -66,7 +66,7 @@ const Todo = ({ user }) => {
 
   const deleteTask = async (id) => {
     try {
-      let response = await axios.delete(`http://localhost:8000/tasks/${userId}/${id}`);
+      let response = await axios.delete(`https://todo-api-mocha.vercel.app/tasks/${userId}/${id}`);
       //console.log('DELETE request successful:', response);
       getTask(); // Ensure this is called after successful POST
     } catch (error) {
