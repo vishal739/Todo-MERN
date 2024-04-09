@@ -2,9 +2,6 @@ const model= require("../model/user");
 const User = model.userModel;
 
 
-
-
-
 exports.read= async(req,res)=>{
     try{
         const id= req.params.id;

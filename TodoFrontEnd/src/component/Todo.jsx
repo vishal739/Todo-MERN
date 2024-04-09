@@ -181,10 +181,6 @@ const Todo = ({ user }) => {
               isOpen={isEditModalOpen}
               onClose={handleEditModalClose}
               onSave={handleEditModalSave}
-              initialText={task}
-              initialStatus={taskStatus}
-              initialDate={selectedDate}
-              taskId={taskID}
             />
           </div>
         </div>
